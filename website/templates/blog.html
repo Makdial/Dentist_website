@@ -1,3 +1,6 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +13,11 @@
   <!-- Title -->
   <title>Dento - Dentist &amp; Medical HTML Template</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="./img/core-img/favicon.ico">
+  <!-- Favicon {% static 'website/'%}-->
+  <link rel="icon" href="{% static 'website/img/core-img/favicon.ico' %}">
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
 
 </head>
 
@@ -35,8 +38,8 @@
           <!-- Top Content -->
           <div class="col-6 col-md-9 col-lg-8">
             <div class="top-header-content">
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="28 Jackson Street, Chicago, 7788569 USA"><i class="fa fa-map-marker"></i> <span>28 Jackson Street, Chicago, 7788569 USA</span></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="info.dento@gmail.com"><i class="fa fa-envelope"></i> <span>info.dento@gmail.com</span></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="391 Sumpter street, New York, 11233 USA"><i class="fa fa-map-marker"></i> <span>391 Sumpter street, New York, 11233 USA</span></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="seneworldwide@gmail.com"><i class="fa fa-envelope"></i> <span>seneworldwide@gmail.com</span></a>
             </div>
           </div>
           <!-- Top Header Social Info -->
@@ -61,8 +64,8 @@
           <!-- Classy Menu -->
           <nav class="classy-navbar justify-content-between" id="dentoNav">
 
-            <!-- Logo -->
-            <a class="nav-brand" href="index.html"><img src="./img/core-img/logo.png" alt=""></a>
+            <!-- Logo {% static 'website/'%}-->
+            <a class="nav-brand" href="{% url 'home' %}"><img src="{% static 'website/img/core-img/logo.png'% }" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -80,16 +83,16 @@
               <!-- Nav Start -->
               <div class="classynav">
                 <ul id="nav">
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="{% url 'home' %}">Home</a></li>
                   <li><a href="#">Pages</a>
                     <ul class="dropdown">
-                      <li><a href="index.html">- Home</a></li>
+                      <li><a href="{% url 'home' %}">- Home</a></li>
                       <li><a href="about.html">- About Us</a></li>
                       <li><a href="service.html">- Service</a></li>
                       <li><a href="pricing.html">- Pricing</a></li>
-                      <li><a href="blog.html">- Blog</a></li>
-                      <li><a href="blog-details.html">- Blog Details</a></li>
-                      <li><a href="contact.html">- Contact</a></li>
+                      <li><a href="{% url 'blog' %}">- Blog</a></li>
+                      <li><a href="{% url 'blog_details'%}">- Blog Details</a></li>
+                      <li><a href="{% url 'contact' %}">- Contact</a></li>
                       <li><a href="#">- Dropdown</a>
                         <ul class="dropdown">
                           <li><a href="#">- Dropdown Item</a></li>
@@ -107,16 +110,16 @@
                       </li>
                     </ul>
                   </li>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="service.html">Service</a></li>
-                  <li><a href="pricing.html">Pricing</a></li>
-                  <li><a href="#">Blog</a>
+                  <li><a href="{% url 'about' %}">About</a></li>
+                  <li><a href="url 'service'">Service</a></li>
+                  <li><a href="url 'pricing'">Pricing</a></li>
+                  <li><a href="{% url 'blog' %}">Blog</a>
                     <ul class="dropdown">
-                      <li><a href="blog.html">- Blog</a></li>
-                      <li><a href="blog-details.html">- Blog Details</a></li>
+                      <li><a href="{% url 'blog' %}">- Blog</a></li>
+                      <li><a href="{% url 'blog_details' %}">- Blog Details</a></li>
                     </ul>
                   </li>
-                  <li><a href="./contact.html">Contact</a></li>
+                  <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
               </div>
               <!-- Nav End -->
@@ -131,8 +134,8 @@
   </header>
   <!-- ***** Header Area End ***** -->
 
-  <!-- ***** Breadcrumb Area Start ***** -->
-  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/12.jpg);">
+  <!-- ***** Breadcrumb Area Start ***** {% static 'website/'%}-->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/12.jpg' %});">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
@@ -147,7 +150,7 @@
         <div class="col-12">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'home'%}"><i class="fa fa-home"></i> Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Blog</li>
             </ol>
           </nav>
@@ -165,15 +168,15 @@
 
           <!-- Single Blog Item -->
           <div class="single-blog-item style-2 d-flex flex-wrap align-items-center mb-50">
-            <!-- Blog Thumbnail -->
+            <!-- Blog Thumbnail {% static 'website/'%}-->
             <div class="blog-thumbnail">
-              <a href="./blog-details.html">
-                <img src="./img/bg-img/16.jpg" alt="">
+              <a href="{% url 'blog_details' %}">
+                <img src="{% static 'website/img/bg-img/16.jpg' %}" alt="">
               </a>
             </div>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">How your mouth bacteria can harm your lungs</a>
+              <a href="{% url 'blog_details'%}" class="post-title">How your mouth bacteria can harm your lungs</a>
               <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam nec tincidunt interdum ante consectetur dapibus molestie ...</p>
               <div class="post-meta">
                 <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
@@ -186,13 +189,13 @@
           <div class="single-blog-item style-2 d-flex flex-wrap align-items-center mb-50">
             <!-- Blog Thumbnail -->
             <div class="blog-thumbnail">
-              <a href="./blog-details.html">
-                <img src="./img/bg-img/17.jpg" alt="">
+              <a href="{% url 'blog_details' %}">
+                <img src="{% static 'website/img/bg-img/17.jpg' %}" alt="">
               </a>
             </div>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">What is the best kind of toothpaste to use?</a>
+              <a href="{% url 'blog_details' %}" class="post-title">What is the best kind of toothpaste to use?</a>
               <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam nec tincidunt interdum ante consectetur dapibus molestie ...</p>
               <div class="post-meta">
                 <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
@@ -203,15 +206,15 @@
 
           <!-- Single Blog Item -->
           <div class="single-blog-item style-2 d-flex flex-wrap align-items-center mb-50">
-            <!-- Blog Thumbnail -->
+            <!-- Blog Thumbnail {% static 'website/'%}-->
             <div class="blog-thumbnail">
-              <a href="./blog-details.html">
-                <img src="./img/bg-img/18.jpg" alt="">
+              <a href="{% url 'blog_details' %}">
+                <img src="{% static 'website/img/bg-img/18.jpg'%}" alt="">
               </a>
             </div>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">Why you should avoid sipping your drinks</a>
+              <a href="{% url 'blog_details' %}" class="post-title">Why you should avoid sipping your drinks</a>
               <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam nec tincidunt interdum ante consectetur dapibus molestie ...</p>
               <div class="post-meta">
                 <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
@@ -222,15 +225,15 @@
 
           <!-- Single Blog Item -->
           <div class="single-blog-item style-2 d-flex flex-wrap align-items-center mb-50">
-            <!-- Blog Thumbnail -->
+            <!-- Blog Thumbnail {% static 'website/'%}-->
             <div class="blog-thumbnail">
-              <a href="./blog-details.html">
-                <img src="./img/bg-img/19.jpg" alt="">
+              <a href="{% url 'blog_details' %}">
+                <img src="{% static 'website/img/bg-img/19.jpg'%}" alt="">
               </a>
             </div>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">How long does numbness last after the dentist?</a>
+              <a href="{% url 'blog_details' %}" class="post-title">How long does numbness last after the dentist?</a>
               <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam nec tincidunt interdum ante consectetur dapibus molestie ...</p>
               <div class="post-meta">
                 <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
@@ -241,15 +244,15 @@
 
           <!-- Single Blog Item -->
           <div class="single-blog-item style-2 d-flex flex-wrap align-items-center mb-50">
-            <!-- Blog Thumbnail -->
+            <!-- Blog Thumbnail {% static 'website/'%}-->
             <div class="blog-thumbnail">
-              <a href="./blog-details.html">
-                <img src="./img/bg-img/20.jpg" alt="">
+              <a href="{% url 'blog_details'%}">
+                <img src=" {% static 'website/img/bg-img/20.jpg'%}" alt="">
               </a>
             </div>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">Lie bumps (transient lingual papillitis): What to know</a>
+              <a href="{% url 'blog_details'%}" class="post-title">Lie bumps (transient lingual papillitis): What to know</a>
               <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam nec tincidunt interdum ante consectetur dapibus molestie ...</p>
               <div class="post-meta">
                 <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
@@ -298,10 +301,10 @@
             <div class="single-widget-area news-widget">
               <h5 class="widget-title">Recent News</h5>
 
-              <!-- Single News Area -->
+              <!-- Single News Area {% static 'website/'%}-->
               <div class="single-news-area d-flex align-items-center">
                 <div class="blog-thumbnail">
-                  <img src="./img/bg-img/21.jpg" alt="">
+                  <img src="{% static 'website/img/bg-img/21.jpg' %}" alt="">
                 </div>
                 <div class="blog-content">
                   <a href="#" class="post-title">Tooth decay: why good dental hygiene is important</a>
@@ -312,7 +315,7 @@
               <!-- Single News Area -->
               <div class="single-news-area d-flex align-items-center">
                 <div class="blog-thumbnail">
-                  <img src="./img/bg-img/22.jpg" alt="">
+                  <img src="{% static 'website/img/bg-img/22.jpg' %}" alt="">
                 </div>
                 <div class="blog-content">
                   <a href="#" class="post-title">Six reasons your breath might smell like poop</a>
@@ -323,7 +326,7 @@
               <!-- Single News Area -->
               <div class="single-news-area d-flex align-items-center">
                 <div class="blog-thumbnail">
-                  <img src="./img/bg-img/23.jpg" alt="">
+                  <img src="{% static 'website/img/bg-img/23.jpg' %}" alt="">
                 </div>
                 <div class="blog-content">
                   <a href="#" class="post-title">Everything you need to know about sinus infection</a>
@@ -332,9 +335,9 @@
               </div>
             </div>
 
-            <!-- Single Widget Area -->
+            <!-- Single Widget Area {% static 'website/'%}-->
             <div class="single-widget-area adds-widget">
-              <a href="#"><img class="w-100" src="./img/bg-img/adds.png" alt=""></a>
+              <a href="#"><img class="w-100" src="{% static 'website/img/bg-img/adds.png' %}" alt=""></a>
             </div>
 
           </div>
@@ -345,18 +348,18 @@
   <!-- *****Blog Area End ***** -->
 
   <!-- ***** Footer Area Start ***** -->
-  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/3.jpg);">
+  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/3.jpg'%});">
     <div class="container">
       <div class="row">
-        <!-- Single Footer Widget -->
+        <!-- Single Footer Widget {% static 'website/'%}-->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-footer-widget">
-            <a href="./index.html" class="d-block mb-4"><img src="./img/core-img/logo.png" alt=""></a>
+            <a href="{% url 'home' %}" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
             <p>Etiam sutor risus, dapibus act elefend katen, lacinia sitamet denim. Mauris sagittis kansa interdum dignissim.</p>
             <div class="footer-contact">
-              <p><i class="icon_pin"></i> 28 Jackson Street, Chicago, 7788569 USA</p>
-              <p><i class="icon_phone"></i> +84. 2252. 2250. 122</p>
-              <p><i class="icon_mail"></i> info.dento@gmail.com</p>
+              <p><i class="icon_pin"></i> 391 Sumpter street, New York, 11233 USA</p>
+              <p><i class="icon_phone"></i> +1. 732. 256. 1782</p>
+              <p><i class="icon_mail"></i> seneworldwide@gmail.com</p>
             </div>
           </div>
         </div>
@@ -436,8 +439,7 @@
         <div class="col-12">
           <div class="copywrite-content">
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </p>
           </div>
         </div>
       </div>
@@ -446,16 +448,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <!-- ***** Footer Area End ***** -->
 
   <!-- ******* All JS ******* -->
-  <!-- jQuery js -->
-  <script src="js/jquery.min.js"></script>
+  <!-- jQuery js {% static 'website/'%}-->
+  <script src="{% static 'website/js/jquery.min.js' %}"></script>
   <!-- Popper js -->
-  <script src="js/popper.min.js"></script>
+  <script src="{% static 'website/js/popper.min.js' %}"></script>
   <!-- Bootstrap js -->
-  <script src="js/bootstrap.min.js"></script>
+  <script src="{% static 'website/js/bootstrap.min.js'%}"></script>
   <!-- All js -->
-  <script src="js/dento.bundle.js"></script>
+  <script src="{% static 'website/js/dento.bundle.js'%}"></script>
   <!-- Active js -->
-  <script src="js/default-assets/active.js"></script>
+  <script src="{% static 'website/js/default-assets/active.js'%}"></script>
 
 </body>
 

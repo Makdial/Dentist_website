@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,14 +8,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Title -->
+  <!-- Title {% static 'website/' %}-->
   <title>Dento - Dentist &amp; Medical HTML Template</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="./img/core-img/favicon.ico">
+  <link rel="icon" href="{% static 'website/img/core-img/favicon.ico' %}">
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
 
 </head>
 
@@ -35,8 +36,8 @@
           <!-- Top Content -->
           <div class="col-6 col-md-9 col-lg-8">
             <div class="top-header-content">
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="28 Jackson Street, Chicago, 7788569 USA"><i class="fa fa-map-marker"></i> <span>28 Jackson Street, Chicago, 7788569 USA</span></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="info.dento@gmail.com"><i class="fa fa-envelope"></i> <span>info.dento@gmail.com</span></a>
+              <a href="https://goo.gl/maps/6hf9uxxtcDWqvAsEA" data-toggle="tooltip" data-placement="bottom" title="391 Sumpter Street, New York, 11210 USA"><i class="fa fa-map-marker"></i> <span>391 Sumpter Street, New York, 11210 USA</span></a>
+              <a href="https://accounts.google.com/ServiceLogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin" data-toggle="tooltip" data-placement="bottom" title="seneworldwide@gmail.com"><i class="fa fa-envelope"></i> <span>seneworldwide@gmail.com</span></a>
             </div>
           </div>
           <!-- Top Header Social Info -->
@@ -61,8 +62,8 @@
           <!-- Classy Menu -->
           <nav class="classy-navbar justify-content-between" id="dentoNav">
 
-            <!-- Logo -->
-            <a class="nav-brand" href="index.html"><img src="./img/core-img/logo.png" alt=""></a>
+            <!-- Logo {% static 'website/' %}-->
+            <a class="nav-brand" href="{% url 'home' %}"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -80,16 +81,16 @@
               <!-- Nav Start -->
               <div class="classynav">
                 <ul id="nav">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="#">Pages</a>
+                  <li><a href="{% url 'home'%}">Home</a></li>
+                  <li><a href="{% url 'service'%}">Pages</a>
                     <ul class="dropdown">
-                      <li><a href="index.html">- Home</a></li>
-                      <li><a href="about.html">- About Us</a></li>
-                      <li><a href="service.html">- Service</a></li>
-                      <li><a href="pricing.html">- Pricing</a></li>
-                      <li><a href="blog.html">- Blog</a></li>
-                      <li><a href="blog-details.html">- Blog Details</a></li>
-                      <li><a href="contact.html">- Contact</a></li>
+                      <li><a href="{%url 'home'%}">- Home</a></li>
+                      <li><a href="{% url 'about'%}">- About Us</a></li>
+                      <li><a href="{% url 'service' %}">- Service</a></li>
+                      <li><a href="{% url 'pricing'%}">- Pricing</a></li>
+                      <li><a href="{% url 'blog' %}">- Blog</a></li>
+                      <li><a href="{% url 'blog_details' %}">- Blog Details</a></li>
+                      <li><a href="{% url 'contact' %}">- Contact</a></li>
                       <li><a href="#">- Dropdown</a>
                         <ul class="dropdown">
                           <li><a href="#">- Dropdown Item</a></li>
@@ -107,13 +108,13 @@
                       </li>
                     </ul>
                   </li>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="service.html">Service</a></li>
-                  <li><a href="pricing.html">Pricing</a></li>
+                  <li><a href="{% url 'about' %}">About</a></li>
+                  <li><a href="{% url 'service' %}">Service</a></li>
+                  <li><a href="{% url 'pricing' %}">Pricing</a></li>
                   <li><a href="#">Blog</a>
                     <ul class="dropdown">
-                      <li><a href="blog.html">- Blog</a></li>
-                      <li><a href="blog-details.html">- Blog Details</a></li>
+                      <li><a href="{% url 'blog' %}">- Blog</a></li>
+                      <li><a href="{% url 'blog_details' %}">- Blog Details</a></li>
                     </ul>
                   </li>
                   <li><a href="./contact.html">Contact</a></li>
@@ -131,8 +132,8 @@
   </header>
   <!-- ***** Header Area End ***** -->
 
-  <!-- ***** Breadcrumb Area Start ***** -->
-  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/12.jpg);">
+  <!-- ***** Breadcrumb Area Start ***** {% static 'website/' %}-->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/12.jpg' %});">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
@@ -147,7 +148,7 @@
         <div class="col-12">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'home'%}"><i class="fa fa-home"></i> Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Service</li>
             </ol>
           </nav>
@@ -162,11 +163,11 @@
     <div class="container">
       <div class="row">
 
-        <!-- Single Service Area -->
+        <!-- Single Service Area {% static 'website/' %}-->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-service--area text-center mb-50">
             <div class="icon--">
-              <img src="./img/core-img/s6.png" alt="">
+              <img src="{% static 'website/img/core-img/s6.png' %}" alt="">
             </div>
             <h5>Teeth Whitening</h5>
             <p>In pretium neque a libero congue. Elit diam lectus. Prasent lacinia vitae sit
@@ -178,7 +179,7 @@
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-service--area text-center mb-50">
             <div class="icon--">
-              <img src="./img/core-img/s7.png" alt="">
+              <img src="{% static 'website/img/core-img/s7.png' %}" alt="">
             </div>
             <h5>Dental Implants</h5>
             <p>In pretium neque a libero congue. Elit diam lectus. Prasent lacinia vitae sit
@@ -186,11 +187,11 @@
           </div>
         </div>
 
-        <!-- Single Service Area -->
+        <!-- Single Service Area {% static 'website/' %}-->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-service--area text-center mb-50">
             <div class="icon--">
-              <img src="./img/core-img/s8.png" alt="">
+              <img src="{% static 'website/img/core-img/s8.png' %}" alt="">
             </div>
             <h5>Missing Teeth</h5>
             <p>In pretium neque a libero congue. Elit diam lectus. Prasent lacinia vitae sit
@@ -198,11 +199,11 @@
           </div>
         </div>
 
-        <!-- Single Service Area -->
+        <!-- Single Service Area {% static 'website/' %}-->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-service--area text-center mb-50">
             <div class="icon--">
-              <img src="./img/core-img/s9.png" alt="">
+              <img src="{% static 'website/img/core-img/s9.png' %}" alt="">
             </div>
             <h5>Cosmetic Dentistry</h5>
             <p>In pretium neque a libero congue. Elit diam lectus. Prasent lacinia vitae sit
@@ -210,11 +211,11 @@
           </div>
         </div>
 
-        <!-- Single Service Area -->
+        <!-- Single Service Area {% static 'website/' %}-->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-service--area text-center mb-50">
             <div class="icon--">
-              <img src="./img/core-img/s10.png" alt="">
+              <img src="{% static 'website/img/core-img/s10.png' %}" alt="">
             </div>
             <h5>Examination</h5>
             <p>In pretium neque a libero congue. Elit diam lectus. Prasent lacinia vitae sit
@@ -222,11 +223,11 @@
           </div>
         </div>
 
-        <!-- Single Service Area -->
+        <!-- Single Service Area {% static 'website/' %}-->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-service--area text-center mb-50">
             <div class="icon--">
-              <img src="./img/core-img/s6.png" alt="">
+              <img src="{% static 'website/img/core-img/s6.png' %}" alt="">
             </div>
             <h5>Teeth Pain</h5>
             <p>In pretium neque a libero congue. Elit diam lectus. Prasent lacinia vitae sit
@@ -239,8 +240,8 @@
   </section>
   <!-- ***** Services Area End ***** -->
 
-  <!-- ***** Testimonials Area Start ***** -->
-  <section class="testimonials-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('img/bg-img/7.jpg');">
+  <!-- ***** Testimonials Area Start ***** {% static 'website/' %}-->
+  <section class="testimonials-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'website/img/bg-img/7.jpg' %}');">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -250,7 +251,7 @@
             <div class="single-testimonial-slide d-flex align-items-center">
               <!-- Thumbnail -->
               <div class="testimonial-thumb">
-                <img src="./img/bg-img/8.jpg" alt="">
+                <img src="{% static 'website/img/bg-img/8.jpg' %}" alt="">
               </div>
               <!-- Content -->
               <div class="testimonial-content">
@@ -261,11 +262,11 @@
               </div>
             </div>
 
-            <!-- Single Testimonials Slide -->
+            <!-- Single Testimonials Slide {% static 'website/' %}-->
             <div class="single-testimonial-slide d-flex align-items-center">
               <!-- Thumbnail -->
               <div class="testimonial-thumb">
-                <img src="./img/bg-img/8.jpg" alt="">
+                <img src="{% static 'website/img/bg-img/8.jpg' %}" alt="">
               </div>
               <!-- Content -->
               <div class="testimonial-content">
@@ -276,11 +277,11 @@
               </div>
             </div>
 
-            <!-- Single Testimonials Slide -->
+            <!-- Single Testimonials Slide {% static 'website/' %}-->
             <div class="single-testimonial-slide d-flex align-items-center">
               <!-- Thumbnail -->
               <div class="testimonial-thumb">
-                <img src="./img/bg-img/8.jpg" alt="">
+                <img src="{% static 'website/img/bg-img/8.jpg' %}" alt="">
               </div>
               <!-- Content -->
               <div class="testimonial-content">
@@ -311,15 +312,15 @@
       </div>
 
       <div class="row">
-        <!-- Single Blog Item -->
+        <!-- Single Blog Item {% static 'website/' %}-->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
-              <img src="./img/bg-img/4.jpg" alt="">
+            <a href="{% url 'blog_details' %}">
+              <img src="{% static 'website/img/bg-img/4.jpg' %}" alt="">
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">How your mouth bacteria can harm your lungs</a>
+              <a href="{% url 'blog_details'%}" class="post-title">How your mouth bacteria can harm your lungs</a>
               <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam ...</p>
               <div class="post-meta">
                 <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
@@ -332,8 +333,8 @@
         <!-- Single Blog Item -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
-              <img src="./img/bg-img/5.jpg" alt="">
+            <a href="{% url 'blog_details'%}">
+              <img src="{% static 'website/img/bg-img/5.jpg' %}" alt="">
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
@@ -347,15 +348,15 @@
           </div>
         </div>
 
-        <!-- Single Blog Item -->
+        <!-- Single Blog Item {% static 'website/' %}-->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
-              <img src="./img/bg-img/6.jpg" alt="">
+            <a href="{% url 'blog_details' %}">
+              <img src="{% static 'website/img/bg-img/6.jpg' %}" alt="">
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">Why you should avoid sipping your drinks</a>
+              <a href="{% url 'blog_details' %}" class="post-title">Why you should avoid sipping your drinks</a>
               <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam ...</p>
               <div class="post-meta">
                 <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
@@ -369,19 +370,19 @@
   </section>
   <!-- ***** Blog Area End ***** -->
 
-  <!-- ***** Footer Area Start ***** -->
-  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/3.jpg);">
+  <!-- ***** Footer Area Start ***** {% static 'website/' %}-->
+  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/3.jpg' %});">
     <div class="container">
       <div class="row">
         <!-- Single Footer Widget -->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-footer-widget">
-            <a href="./index.html" class="d-block mb-4"><img src="./img/core-img/logo.png" alt=""></a>
+            <a href="{% url 'home' %}" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
             <p>Etiam sutor risus, dapibus act elefend katen, lacinia sitamet denim. Mauris sagittis kansa interdum dignissim.</p>
             <div class="footer-contact">
-              <p><i class="icon_pin"></i> 28 Jackson Street, Chicago, 7788569 USA</p>
-              <p><i class="icon_phone"></i> +84. 2252. 2250. 122</p>
-              <p><i class="icon_mail"></i> info.dento@gmail.com</p>
+              <p><i class="icon_pin"></i> 391 Sumpter street, New York, 11210 USA</p>
+              <p><i class="icon_phone"></i> +1(732)256-1782</p>
+              <p><i class="icon_mail"></i> seneworldwide@gmail.com</p>
             </div>
           </div>
         </div>
@@ -412,7 +413,7 @@
             <!-- Quick Links Nav -->
             <nav>
               <ul class="quick-links">
-                <li><a href="#">About</a></li>
+                <li><a href="{% url 'about' %">About</a></li>
                 <li><a href="#">FAQs</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Policy</a></li>
@@ -420,7 +421,7 @@
                 <li><a href="#">Advisors</a></li>
                 <li><a href="#">Careers</a></li>
                 <li><a href="#">Dentist</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="{% url 'service' %}">Services</a></li>
                 <li><a href="#">Legals</a></li>
               </ul>
             </nav>
@@ -461,8 +462,7 @@
         <div class="col-12">
           <div class="copywrite-content">
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </p>
           </div>
         </div>
       </div>
@@ -472,15 +472,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
   <!-- ******* All JS ******* -->
   <!-- jQuery js -->
-  <script src="js/jquery.min.js"></script>
+  <script src="{% static 'website/js/jquery.min.js' %}"></script>
   <!-- Popper js -->
-  <script src="js/popper.min.js"></script>
+  <script src="{% static 'website/js/popper.min.js' %}"></script>
   <!-- Bootstrap js -->
-  <script src="js/bootstrap.min.js"></script>
+  <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
   <!-- All js -->
-  <script src="js/dento.bundle.js"></script>
+  <script src="{% static 'website/js/dento.bundle.js' %}"></script>
   <!-- Active js -->
-  <script src="js/default-assets/active.js"></script>
+  <script src="{% static 'website/js/default-assets/active.js' %}"></script>
 
 </body>
 
